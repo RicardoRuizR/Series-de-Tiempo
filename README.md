@@ -20,7 +20,7 @@ Vemos que la función de autocorrelación no se hace completamente cero para 20 
 
 Transformamos los datos con el logaritmo para ver como se comporta la serie y proponer con mayor certeza un modelo. 
 
-![Gráfica de las funciones de autocorrelación](/imagenes/Grafica3.png)
+![Gráfica de la serie transformada](/imagenes/Grafica3.png)
 
 Ahora trabajando con la serie diferenciada obtenemos las siguientes gráficas.
 
@@ -30,11 +30,11 @@ Lo anterior parece indicarnos que deberíamos de ajustar un modelo MA(1) a la se
 
 Tomando este ajuste hagamos algunos diagnósticos con los residuales.
 
-![Gráfica de las funciones de autocorrelación](/imagenes/Grafica5.png)
+![Gráfica de los residuales](/imagenes/Grafica5.png)
 
 Comprobemos la normalidad de stos residuales.
 
-![Gráfica de las funciones de autocorrelación](/imagenes/Grafica6.png)
+![Gráfica de la prueba de normalidad](/imagenes/Grafica6.png)
 
 Podemos ver que los residuos se ajustan a una distribución normal, aunque no tan bien.
 Ahora obtengamos distintos estadísticos con estos residuales.
@@ -61,11 +61,11 @@ Obtenemos los AIC de ambos modelos siendo estos
  
  Como estos valores del AIC son muy cercanos haremos un diagnóstico de los residuos para ver qué modelo seleccionamos. Hagamos los diagnósticos necesarios para este nuevo modelo.
 
-  ![Gráfica de las funciones de autocorrelación](/imagenes/Grafica7.png)
+  ![Gráfica de los residuales](/imagenes/Grafica7.png)
   
 Haciendo la prueba de normalidad de los residuales.
 
-![Gráfica de las funciones de autocorrelación](/imagenes/Grafica8.png)
+![Gráfica de la prueba de normalidad](/imagenes/Grafica8.png)
 
 Vemos que estos residuales se aproximan mejor a la distribución normal ajustandose mejor a la linea
 recta. Ahora obtengamos distintos estadísticos con estos residuales.
@@ -82,7 +82,7 @@ De los estadísticos anteriores podemos decir varias cosas.
 anual.(Ljung-Box)
 Finalmente decidimos hacer las estimaciones y pronósticos con el modelo propuesto.
 
-  ![Gráfica de las funciones de autocorrelación](/imagenes/Grafica2.png)
+  ![Gráfica de pronósticos](/imagenes/Grafica9.png)
 
 Decidimos quedarnos con el modelo propuesto ya que tomando en cuenta su diagnóstico de residuales
 y comparándolo con el del modelo hecho automáticamente se comportan mejor aunque los pronósticos
