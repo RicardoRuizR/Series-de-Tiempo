@@ -46,27 +46,7 @@ layout(1:2)
 Acf(ly,20, main="Autocorrelación simple(log(y))")
 Pacf(ly,20, main="Autocorrelación parcial(log(y))")
 
-#Tampoco se resuelve este problema asi que por ultimo intentaremos con la
-# transformación sqrt(y)
-
-
-sy<- sqrt(y)
-
-
-#Graficamos los datos para darnos una idea de cómo se comportan los datos
-
-layout(1:3)
-ts.plot(sy, ylab="sqrt(y)",main="Muertes Accidentales EE.UU.(1973-1978)", col="darkblue")
-
-#Ahora graficamos la función de autocorrelación y la función de autocorrelación
-# parcial para ver si es claro el modelo a proponer
-
-layout(1:2)
-Acf(sy,20,main="Autocorrelación simple(sqrt(y))")
-Pacf(sy,20, main="Autocorrelación parcial(sqrt(y))")
-
-#Las funciones de autocorrelación se siguen comportando igual.Finalmente 
-# veremos cómo se comporta la serie diferenciada ya que la original no parece 
+#Finalmente  veremos cómo se comporta la serie diferenciada ya que la original no parece 
 # ser estacionaria 
 
 layout(1:1)
@@ -132,13 +112,6 @@ ts.plot(resid(autoy),main="Residuales de SIMA(1,1)(1,1)",xlab="año",ylab="")
 acf(resid(autoy), main="Autocorrelación Simple",ci.col="black",ylab="") 
 pacf(resid(autoy),main="Autocorrelación Parcial",ci.col="black")
 
-#Esto parecería indicarnos que deberíamos de agregar una estructura de 
-# dependencia a los errores. Por esto propondremos un modelo SIMA(1,2)(1,2)
-
-propy<- arima(log(y),order=c(1,1,1),seas=list(order=c(0,1,1),period=12)) 
-
-propy
-autoy
 
 #Entonces hacemos los pronósticos con este ajuste seleccionado por 
 # SARIMA(0,1,1)(0,1,1)(lambda=0)
