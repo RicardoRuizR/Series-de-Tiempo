@@ -13,7 +13,8 @@ y <- ts(MA$V1, frequency = 12, start = 1973)
 
 #Graficamos los datos para darnos una idea de cómo se comportan los datos
 
-ts.plot(y,main="Muertes Accidentales EE.UU.(1973-1978)", col="darkblue")
+ts.plot(y,main="Muertes Accidentales EE.UU.(1973-1978)", col="darkblue",
+        ylab="Muertes")
 
 #Podemos ver una clara componente estacional en los datos
 
@@ -35,7 +36,7 @@ ly<- log(y)
 
 #Graficamos los datos para darnos una idea de cómo se comportan los datos
 
-layout(1:3)
+layout(1:1)
 ts.plot(ly, ylab="log(y)",main="Muertes Accidentales EE.UU.(1973-1978)", col="darkblue")
 
 #Ahora graficamos la función de autocorrelación y la función de autocorrelación
