@@ -1,4 +1,4 @@
-# Consumo de agua
+# Muertes accidentales en EE.UU.(1973-1979)
 
 Se va a analizar el conjunto de datos MAccidentes.txt para elegir el modelo que mejor se ajuste a los datos y generar pronósticos hacia futuro dependiendo de la unidad de tiempo.
 
@@ -28,6 +28,8 @@ Ahora trabajando con la serie diferenciada obtenemos las siguientes gráficas.
 
 Lo anterior parece indicarnos que deberíamos de ajustar un modelo MA(1) a la serie original diferenciada. Ahora usando la función autoarima nos dice que usemos la transformación y^-0.033 por lo que el modelo inicial a proponer es un IMA(1,1) con componente estacional IMA(1,1).
 
+## Análisis de residuales
+
 Tomando este ajuste hagamos algunos diagnósticos con los residuales.
 
 ![Gráfica de los residuales](/imagenes/Grafica5.png)
@@ -50,6 +52,8 @@ De los estadísticos anteriores podemos decir varias cosas.
 - Los errores se distribuyen de forma independientes.(Box-Pierce)
 - Los datos de la serie son no correlacionados entre ellos pero sí cuando pensamos en una repetición
 anual.(Ljung-Box)
+
+## Análisis de modelo propuesto
 
 Como la transformación obtenida automáticamente es muy cercana al 0 podemos proponer un nuevo modelo con los datos transformados usando el logaritmo natural para transformar los datos pero ahora sin tomar las diferencias pues el proceso ya es estacionario. Las funciones de autocorrelación de estos datos ya las observamos, así, propondremos un modelo SARIMA(0,1,1)(0,1,1).
 
@@ -80,6 +84,9 @@ De los estadísticos anteriores podemos decir varias cosas.
 - Los errores se distribuyen de forma independientes.(Box-Pierce)
 - Los datos de la serie son no correlacionados entre ellos ni cuando pensamos en una repetición
 anual.(Ljung-Box)
+
+## Pronósticos
+
 Finalmente decidimos hacer las estimaciones y pronósticos con el modelo propuesto.
 
   ![Gráfica de pronósticos](/imagenes/Grafica9.png)
